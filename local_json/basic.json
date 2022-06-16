@@ -1,0 +1,44 @@
+{
+  "skillLabel": "技能",
+  "awardsLabel": "获奖情况",
+  "awards": [
+    "一等奖",
+    "二等奖",
+    "特别优秀奖",
+    "鼓励奖",
+    "天才杯天才奖",
+    "随便什么奖",
+    "一等奖",
+    "二等奖"
+  ],
+  "skills": [
+    {
+      "title": "Assembly",
+      "percentage": 65
+    },
+    {
+      "title": "Basic",
+      "percentage": 50
+    },
+    {
+      "title": "HTML5/CSS",
+      "percentage": 40
+    },
+    {
+      "title": "C++",
+      "percentage": 50
+    },
+    {
+      "title": "R",
+      "percentage": 30
+    },
+    {
+      "title": "Golang",
+      "percentage": 40
+    },
+    {
+      "title": "Android",
+      "percentage": 50
+    }
+  ]
+}
