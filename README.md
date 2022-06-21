@@ -1,5 +1,6 @@
 # Resume with RN
-
+## 参考
+[TypeScript & React TodoMVC Example](https://github.com/tastejs/todomvc/tree/master/examples/typescript-react)
 ## 效果
 
 ![](./showcast_img/1.jpg) | ![](./showcast_img/2.jpg)
