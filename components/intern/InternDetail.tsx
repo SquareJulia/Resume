@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { Intern } from "./InternModal";
-import { styles, colorFor } from "./Style";
-import { Projects } from "./Projects";
+import { styles, colorFor } from "../Style";
+import { Projects } from "../projects/Projects";
 
 export const InternDetail = ({ data }: { data: Intern }) => {
   const { description, details, projects } = data;

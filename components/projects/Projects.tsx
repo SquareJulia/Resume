@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, ScrollView } from "react-native";
-import { styles as globalStyles, colorFor } from "./Style";
-import { Project } from "./InternModal";
+import { styles as globalStyles, colorFor } from "../Style";
+import { Project } from "../intern/InternModal";
 import { StyleSheet } from "react-native";
 import * as Animatable from "react-native-animatable";
 import Collapsible from "react-native-collapsible";

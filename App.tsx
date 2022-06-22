@@ -7,7 +7,12 @@
  *
  * @format
  */
-
+import {
+  BASIC_INFO,
+  EDU_BACKGROUND,
+  INTERN_EXPERIENCE,
+  PROJECTS_EXPERIENCE,
+} from "./components/constants";
 import React, { useState, ReactNode } from "react";
 import basic from "./local_json/basic.json";
 import education from "./local_json/education.json";
@@ -15,24 +20,18 @@ import intern from "./local_json/intern.json";
 import projects from "./local_json/projects.json";
 import { AppScreen } from "./components/AppScreen";
 import { Basic } from "./components/Basic";
-import { Intern, InternModal } from "./components/InternModal";
+import { Intern  } from "./components/intern/InternModal";
 import { styles } from "./components/Style";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { InternDetail } from "./components/InternDetail";
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
-import { BaseItem, BaseItemType } from "./components/BaseItem";
-import { Projects } from "./components/Projects";
+import { InternDetail } from "./components/intern/InternDetail";
+import { Text, View, TouchableOpacity, FlatList } from "react-native";
+import { BaseItem  } from "./components/BaseItem";
+import { Projects } from "./components/projects/Projects";
 import { TopLabel } from "./components/TopLabel";
 
 const Stack = createNativeStackNavigator();
 const DetailScreen = ({ navigation, route }) => {
-
   const data = route.params.data;
   //not functional
   return (
@@ -47,11 +46,16 @@ const DetailScreen = ({ navigation, route }) => {
   ); //TODO
 };
 const ResumeScreen = ({ navigation, route }) => {
-  const [item, setItem] = useState("基本信息");
+  const [item, setItem] = useState(BASIC_INFO);
   return (
     <Profile
       label="About me"
-      items={["基本信息", "教育背景", "实习经历", "项目经历"]}
+      items={[
+        BASIC_INFO,
+        EDU_BACKGROUND,
+        INTERN_EXPERIENCE,
+        PROJECTS_EXPERIENCE,
+      ]}
       selectedItem={item}
       setSelectedItem={setItem}
       navigation={navigation}
@@ -66,11 +70,10 @@ const ProfileContent = ({
   navigation: any;
   selected: string;
 }) => {
-  
   switch (selected) {
-    case "基本信息":
+    case BASIC_INFO:
       return <Basic data={basic}></Basic>;
-    case "教育背景":
+    case EDU_BACKGROUND:
       return (
         <FlatList
           data={education.education_experience}
@@ -80,7 +83,7 @@ const ProfileContent = ({
           )}
         />
       );
-    case "实习经历":
+    case INTERN_EXPERIENCE:
       return (
         <FlatList
           data={intern.intern_experience}
@@ -99,7 +102,7 @@ const ProfileContent = ({
           )}
         />
       );
-    case "项目经历":
+    case PROJECTS_EXPERIENCE:
       return (
         <Projects projects={projects.projects} />
         // <Example />
@@ -115,14 +118,12 @@ const Profile = ({
   selectedItem,
   setSelectedItem,
   navigation,
-}: // requestApis,
-{
+}: {
   label: string;
   items: string[];
   selectedItem: string;
   setSelectedItem: Function;
   navigation: any;
-  // requestApis: { [key: string]: string };
 }) => {
   return (
     <View style={styles.outer}>

@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { styles } from "./Style";
-import { BaseItemType } from "./BaseItem";
+import {  Text, TouchableOpacity } from "react-native";
+import { styles } from "../Style";
+import { BaseItemType } from "../BaseItem";
 import { Modal } from "react-native-paper";
 
 export type Project = { name: string; description?: string; details: string[] };
