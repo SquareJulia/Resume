@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import { styles, colorFor } from "./Style";
+import { styles, colorFor } from "../../assets/styles/Style";
 export type BaseItemType = {
   //   icon: ImageSourcePropType;
   //   title: string;

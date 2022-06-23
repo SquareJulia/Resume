@@ -1,15 +1,10 @@
 import React from "react";
 import {  Text, TouchableOpacity } from "react-native";
-import { styles } from "../Style";
-import { BaseItemType } from "../BaseItem";
+import { styles } from "@assets/styles/Style";
 import { Modal } from "react-native-paper";
 
-export type Project = { name: string; description?: string; details: string[] };
-export type Intern = BaseItemType & {
-  description?: string;
-  details: string[];
-  projects?: Project[];
-};
+import { Intern } from "./IIntern";
+
 
 export const InternModal = ({
   data,

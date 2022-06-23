@@ -12,23 +12,23 @@ import {
   EDU_BACKGROUND,
   INTERN_EXPERIENCE,
   PROJECTS_EXPERIENCE,
-} from "./components/constants";
+} from "@src/constants/constants";
 import React, { useState, ReactNode } from "react";
 import basic from "./local_json/basic.json";
 import education from "./local_json/education.json";
 import intern from "./local_json/intern.json";
 import projects from "./local_json/projects.json";
-import { AppScreen } from "./components/AppScreen";
-import { Basic } from "./components/Basic";
-import { Intern  } from "./components/intern/InternModal";
-import { styles } from "./components/Style";
+import  {WelcomeScreen}  from "@src/views/Welcome/WelcomeScreen";
+import { Basic } from "@src/views/Resume/basic/basic_info/Basic";
+import { Intern } from "@src/views/Resume/intern/IIntern";
+import { styles } from "@assets/styles/Style";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { InternDetail } from "./components/intern/InternDetail";
+import { InternDetail } from "@src/views/Detail/InternDetail";
 import { Text, View, TouchableOpacity, FlatList } from "react-native";
-import { BaseItem  } from "./components/BaseItem";
-import { Projects } from "./components/projects/Projects";
-import { TopLabel } from "./components/TopLabel";
+import { BaseItem  } from "@src/components/BaseItem";
+import { Projects } from "@src/views/Resume/projects/Projects";
+import { TopLabel } from "@src/components/TopLabel";
 
 const Stack = createNativeStackNavigator();
 const DetailScreen = ({ navigation, route }) => {
@@ -160,7 +160,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={AppScreen} />
+        <Stack.Screen name="Home" component={WelcomeScreen} />
         <Stack.Screen name="Resume" component={ResumeScreen} />
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>

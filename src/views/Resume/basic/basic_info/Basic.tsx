@@ -1,14 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import { styles } from "./Style";
-import { Skills } from "./Skills";
-export type Skill = { title: string; percentage: number };
-type BasicInfo = {
-  skillLabel: string;
-  skills: Skill[];
-  awardsLabel: string;
-  awards: string[];
-};
+import { styles } from "@assets/styles/Style";
+
+import BasicInfo from "./IBasic";
+import { Skills } from "../skills/Skills";
+
 export const Basic = ({ data }: { data: BasicInfo }) => {
   const { skillLabel, skills, awardsLabel, awards } = data;
   return (

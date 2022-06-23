@@ -5,9 +5,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ProgressBar } from "react-native-paper";
-import { styles } from "./Style";
-import { Skill } from "./Basic";
-import { colorFor } from "./Style";
+import { styles } from "@assets/styles/Style";
+import { Skill } from "./ISkill";
+import { colorFor } from "@assets/styles/Style";
 export const Skills = ({
   skills,
   skillLabel,
