@@ -3,10 +3,10 @@
 [TypeScript & React TodoMVC Example](https://github.com/tastejs/todomvc/tree/master/examples/typescript-react)
 ## 效果
 
-![](./showcast_img/1.jpg) | ![](./showcast_img/2.jpg)
+![](./assets/images/1.jpg) | ![](./assets/images/2.jpg)
 |:-------------------------:|:-------------------------:|
-![](./showcast_img/3.jpg) | ![](./showcast_img/4.jpg)
-![](./showcast_img/5.jpg)| ![](./showcast_img/6.jpg)
+![](./assets/images/3.jpg) | ![](./assets/images/4.jpg)
+![](./assets/images/5.jpg)| ![](./assets/images/6.jpg)
 
 ## 数据类型
 
