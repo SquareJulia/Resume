@@ -12,32 +12,32 @@ import {
   EDU_BACKGROUND,
   INTERN_EXPERIENCE,
   PROJECTS_EXPERIENCE,
-} from "@src/constants/constants";
-import React, { useState, ReactNode } from "react";
-import basic from "./local_json/basic.json";
-import education from "./local_json/education.json";
-import intern from "./local_json/intern.json";
-import projects from "./local_json/projects.json";
-import  {WelcomeScreen}  from "@src/views/Welcome/WelcomeScreen";
-import { Basic } from "@src/views/Resume/basic/basic_info/Basic";
-import { Intern } from "@src/views/Resume/intern/IIntern";
-import { styles } from "@assets/styles/Style";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { InternDetail } from "@src/views/Detail/InternDetail";
-import { Text, View, TouchableOpacity, FlatList } from "react-native";
-import { BaseItem  } from "@src/components/BaseItem";
-import { Projects } from "@src/views/Resume/projects/Projects";
-import { TopLabel } from "@src/components/TopLabel";
+} from '@src/constants/constants';
+import React, {useState} from 'react';
+import basic from '../local_json/basic.json';
+import education from '../local_json/education.json';
+import intern from '../local_json/intern.json';
+import projects from '../local_json/projects.json';
+import WelcomeScreen from 'src/screens/Welcome/WelcomeScreen';
+import Basic from 'src/screens/Resume/basic/basic_info/Basic';
+import {Intern} from 'src/screens/Resume/intern/IIntern';
+import styles from 'src/globalStyles';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import InternDetail from 'src/screens/Detail/InternDetail';
+import {Text, View, TouchableOpacity, FlatList} from 'react-native';
+import BaseItem from '@src/components/BaseItem';
+import Projects from 'src/screens/Resume/projects/Projects';
+import TopLabel from '@src/components/TopLabel';
 
 const Stack = createNativeStackNavigator();
-const DetailScreen = ({ navigation, route }) => {
+const DetailScreen = ({navigation, route}) => {
   const data = route.params.data;
   //not functional
   return (
     <View style={styles.outer}>
-      <TopLabel label={"About me"} />
-      {route.params.type == "Intern" ? (
+      <TopLabel label={'About me'} />
+      {route.params.type === 'Intern' ? (
         <InternDetail data={data as Intern} />
       ) : (
         <></>
@@ -45,7 +45,7 @@ const DetailScreen = ({ navigation, route }) => {
     </View>
   ); //TODO
 };
-const ResumeScreen = ({ navigation, route }) => {
+const ResumeScreen = ({navigation, route}) => {
   const [item, setItem] = useState(BASIC_INFO);
   return (
     <Profile
@@ -59,7 +59,7 @@ const ResumeScreen = ({ navigation, route }) => {
       selectedItem={item}
       setSelectedItem={setItem}
       navigation={navigation}
-    ></Profile>
+    />
   );
 };
 
@@ -72,13 +72,13 @@ const ProfileContent = ({
 }) => {
   switch (selected) {
     case BASIC_INFO:
-      return <Basic data={basic}></Basic>;
+      return <Basic data={basic} />;
     case EDU_BACKGROUND:
       return (
         <FlatList
           data={education.education_experience}
-          keyExtractor={({ what }, index) => what}
-          renderItem={({ item, index }) => (
+          keyExtractor={({what}) => what}
+          renderItem={({item, index}) => (
             <BaseItem data={item} id={index} activeOpacity={0.7} />
           )}
         />
@@ -87,14 +87,14 @@ const ProfileContent = ({
       return (
         <FlatList
           data={intern.intern_experience}
-          keyExtractor={({ what }, index) => what}
-          renderItem={({ item, index }) => (
+          keyExtractor={({what}) => what}
+          renderItem={({item, index}) => (
             <BaseItem
               data={item}
               id={index}
               showDetail={() =>
-                navigation.navigate("Detail", {
-                  type: "Intern",
+                navigation.navigate('Detail', {
+                  type: 'Intern',
                   data: item,
                 })
               }
@@ -129,19 +129,17 @@ const Profile = ({
     <View style={styles.outer}>
       <TopLabel label={label} />
       <View style={styles.row}>
-        {items.map((item) => (
+        {items.map(item => (
           <TouchableOpacity
             key={item}
             onPress={() => setSelectedItem(item)}
-            style={[styles.item, selectedItem == item && styles.selectedItem]}
-          >
+            style={[styles.item, selectedItem === item && styles.selectedItem]}>
             <Text
               style={[
                 styles.text,
                 styles.itemLabel,
-                selectedItem == item && styles.selectedLabel,
-              ]}
-            >
+                selectedItem === item && styles.selectedLabel,
+              ]}>
               {item}
             </Text>
           </TouchableOpacity>
@@ -151,10 +149,6 @@ const Profile = ({
     </View>
   );
 };
-
-export const Card = ({ children }: { children: ReactNode }) => (
-  <TouchableOpacity style={styles.card}>{children}</TouchableOpacity>
-);
 
 const App = () => {
   return (

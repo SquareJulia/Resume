@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 import { Colors, Header } from "react-native/Libraries/NewAppScreen";
-export const WelcomeScreen = ({ navigation }) => {
+const WelcomeScreen = ({ navigation }) => {
   const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
@@ -32,3 +32,4 @@ export const WelcomeScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+export default WelcomeScreen;

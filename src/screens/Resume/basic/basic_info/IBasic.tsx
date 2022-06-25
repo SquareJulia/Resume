@@ -1,4 +1,4 @@
-import { Skill } from "@src/views/Resume/basic/skills/ISkill";
+import {Skill} from 'src/screens/Resume/basic/skills/ISkill';
 type BasicInfo = {
   skillLabel: string;
   skills: Skill[];
